@@ -27,7 +27,7 @@ function hamiltonianPath(
     if (visited.length + 1 === personsNamesList.length) {
         return person.shouldNotBeSantaFor.includes(visited[0]) ? null : [{
             fullName: person.fullName,
-            santaFor: visited[0],
+            target: visited[0],
         }];
     }
 
@@ -51,7 +51,7 @@ function hamiltonianPath(
             ...result,
             {
                 fullName: person.fullName,
-                santaFor: item,
+                target: item,
             },
         ];
     }, null);

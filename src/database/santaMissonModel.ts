@@ -3,13 +3,13 @@ import {Person} from "../models/person";
 
 export interface SantaMission extends Pick<Person, 'fullName'>{
     searchId: String;
-    santaFor: string;
+    target: string;
 }
 
 const santaMissionSchema = new mongoose.Schema<SantaMission>({
     fullName: String,
     searchId: String,
-    santaFor: String,
+    target: String,
 });
 
 export const SantaMissionModel = mongoose.model('SantaMission', santaMissionSchema);

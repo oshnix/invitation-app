@@ -1,0 +1,29 @@
+{
+  "name": "secret-santa-app",
+  "version": "0.1.0",
+  "description": "",
+  "repository": "https://github.com/oshnix/secret-santa-app",
+  "license": "MIT",
+  "author": "Oshnix <sdsdaniil@gmail.com>",
+  "scripts": {
+    "generatePersons": "ts-node src/realData/generatePersons.ts",
+    "generateSantaMissions": "ts-node src/consoleScripts/generateSantaMissions.ts",
+    "putDataToDB": "ts-node src/consoleScripts/putPersonsToDB.ts"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "fp-ts": "^2.11.5",
+    "io-ts": "^2.2.16",
+    "mongoose": "^6.0.13",
+    "ramda": "^0.27.1",
+    "ts-node": "^10.4.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^16.11.10",
+    "@types/ramda": "^0.27.53",
+    "@types/uuid": "^8.3.3",
+    "typescript": "^4.5.2"
+  }
+}

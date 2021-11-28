@@ -1,7 +1,6 @@
-import {SantaMission, SantaMissionModel} from "../database/santaMissonModel";
-import {PersonModel} from "../database/personModel";
-import {uniq} from "ramda";
 import {Person} from "../models/person";
+import {SantaMission} from "../database/santaMissonModel";
+import {uniq} from "ramda";
 
 function logErrorAndExit(errorText: string): never {
     console.error(errorText);
@@ -42,14 +41,3 @@ export function validateGeneratedMissions(persons: Array<Person>, santaMissions:
         logErrorAndExit('Search ids collision');
     }
 }
-
-async function runScript() {
-    const santaMissions = await SantaMissionModel.find().exec();
-    const persons = await PersonModel.find().exec();
-
-    validateGeneratedMissions(persons, santaMissions);
-
-    process.exit(0);
-}
-
-runScript();

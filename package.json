@@ -6,10 +6,11 @@
   "license": "MIT",
   "author": "Oshnix <sdsdaniil@gmail.com>",
   "scripts": {
+    "start": "ts-node src/server/santaMissionHandler.ts",
     "generatePersons": "ts-node src/realData/generatePersons.ts",
-    "generateSantaMissions": "ts-node src/consoleScripts/generateSantaMissions.ts",
     "putDataToDB": "ts-node src/consoleScripts/putPersonsToDB.ts",
-    "validateMissions": "ts-node src/consoleScripts/validateGenetaredMissions.ts"
+    "generateSantaMissions": "ts-node src/consoleScripts/generateSantaMissions.ts",
+    "generateMissionsUrl": "ts-node src/consoleScripts/generateMissionUrls.ts"
   },
   "dependencies": {
     "dotenv": "^10.0.0",

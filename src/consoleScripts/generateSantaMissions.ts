@@ -3,17 +3,11 @@ import {PersonModel} from "../database/personModel";
 import { v4 as uuidv4 } from 'uuid';
 import {Person, PersonsArray, uniquePersonsArrayType} from "../models/person";
 import {SantaMission, SantaMissionModel} from "../database/santaMissonModel";
-import {insert, uniq, without} from "ramda";
+import {uniq, without} from "ramda";
 import {isRight} from "fp-ts/Either";
+import {shuffle} from "../common/shuffle";
 
 type HamiltonianPathReturnValue = Array<Omit<SantaMission, 'searchId'>> | null;
-
-function shuffle<T>(originalArray: Array<T>): Array<T> {
-    return originalArray.reduce((acc, item, index): Array<T> => {
-        const replacementIndex = Math.floor(Math.random() * (index + 1));
-        return insert(replacementIndex, item, insert(index, acc[replacementIndex], acc));
-    }, originalArray);
-}
 
 function hamiltonianPath(
     personsByFullNames: Record<string, Person>,

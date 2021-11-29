@@ -1,0 +1,14 @@
+[
+  {
+    "fullName": "TestUser",
+    "shouldNotBeSantaFor": []
+  },
+  {
+    "fullName": "TestUser1",
+    "shouldNotBeSantaFor": ["TestUser"]
+  },
+  {
+    "fullName": "TestUser2",
+    "shouldNotBeSantaFor": []
+  }
+]
